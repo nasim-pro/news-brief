@@ -8,7 +8,7 @@ const articleSchema = new Schema({
   url: { type: String, required: true, unique: true },
   description: String,
   publishedAt: { type: Date, required: true, index: true },
-  category: { type: String, enum: categories, required: true },
+  category: { type: String, enum: categories, required: false },
   content: String,
   fetchedAt: { type: Date, required: true },
   processedAt: Date
