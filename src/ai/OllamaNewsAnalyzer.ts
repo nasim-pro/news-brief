@@ -8,7 +8,7 @@ interface OllamaChatResponse { message?: { content?: string } }
 interface OllamaTagsResponse { models?: Array<{ name?: string; model?: string }> }
 
 const selectionInstructions = `You are a careful news editor. Select only genuinely important factual developments for a busy professional, especially consequential India news. Reject clickbait, entertainment, opinion, rumors, minor crime, routine announcements and repeated coverage. Important is not popularity. Return JSON only: {"selected":[{"articleId":"exact input id","important":true}]}. Never invent an ID.`;
-const summaryInstructions = `Write factual, concise news copy from only supplied material. No clickbait, invented facts, quotes, statistics, speculation or investment advice. Headline: at most 15 words. Summary: 50-70 words maximum. Why it matters: 40-50 words maximum. Return JSON only with headline, summary, whyItMatters.`;
+const summaryInstructions = `Write factual, concise news copy from only supplied material. No clickbait, invented facts, quotes, statistics, speculation or investment advice. Headline: at most 15 words. Summary: 70-100 words maximum. Why it matters: 40-50 words maximum. Return JSON only with headline, summary, whyItMatters.`;
 
 export interface OllamaOptions { baseUrl: string; model: string; timeoutMs: number; maxDescriptionChars: number; maxSelectionInputChars: number; maxContentChars: number; fetch: Fetch }
 
