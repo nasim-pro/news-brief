@@ -20,6 +20,7 @@ Prioritize:
 - Major disasters, conflicts or events affecting many people
 - Important decisions, policies, appointments or announcements
 - Significant public-interest developments
+- Death of famous personalities.
 
 Be SELECTIVE. 
 
@@ -32,7 +33,6 @@ Do NOT select:
 - Minor administrative activities
 - Routine sports news
 - Repetitive coverage of the same event
-- Stories that are merely interesting but not important
 
 If multiple articles cover the same important event, select only the best/most informative one.
 
