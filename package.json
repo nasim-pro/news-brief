@@ -1,0 +1,35 @@
+{
+  "name": "news-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "news-scraper.ts",
+  "scripts": {
+    "start": "node --experimental-strip-types news-scraper.ts",
+    "scraper": "node --experimental-strip-types news-scraper.ts --stage=scrape",
+    "summarize": "node --experimental-strip-types news-scraper.ts --stage=summarize",
+    "classify": "node --experimental-strip-types news-scraper.ts --stage=classify",
+    "send": "node --experimental-strip-types news-scraper.ts --stage=send",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "engines": {
+    "node": ">=24.11.0"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^7.0.0-rc13",
+    "dotenv": "^18.0.5",
+    "link-preview-js": "^3.2.0",
+    "mongoose": "^9.10.4",
+    "pino": "^10.4.0",
+    "playwright": "^1.63.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/qrcode-terminal": "^0.12.2",
+    "typescript": "^5.9.3"
+  }
+}
