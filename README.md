@@ -16,6 +16,7 @@ MONGODB_URI=mongodb://127.0.0.1:27017/news-scraper
 OLLAMA_URL=http://127.0.0.1:11434
 OLLAMA_MODEL=your-model-name
 HEADLESS=true
+WHATSAPP_GROUP_ADMIN_PHONE=911234567890(Your Phone)
 ```
 
 Install dependencies and run the complete pipeline:
