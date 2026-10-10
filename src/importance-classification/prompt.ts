@@ -1,4 +1,4 @@
-function buildPrompt(articles: any[]): string {
+export function buildPrompt(articles: any[]): string {
   const news = articles.map(article => ({
     id: article._id.toString(),
     title: article.title,
@@ -6,42 +6,24 @@ function buildPrompt(articles: any[]): string {
   }));
 
   return `
-Select the most important news from today's articles.
+You are an expert news editor preparing a daily briefing. Review the following news articles and select the top 10 most noteworthy stories that a well-informed person should know today.
 
-Keep an article only if it is genuinely important for current affairs or something a busy person should know.
+Prioritize a diverse mix of categories:
+- Major national or international political, policy, and legal developments
+- Major economic, market, or financial news
+- Prominent obituaries, deaths of famous personalities, or major cultural figures
+- Major accidents, disasters, or critical public safety events
+- Significant scientific, technological, or environmental breakthroughs
+- Major national or international sports achievements or events
+- High-impact public interest stories that people are talking about
 
-Prioritize:
-- Major national or international events
-- Major government or political developments
-- Important court judgments or legal developments
-- Major economic or financial developments
-- Major diplomatic, security or geopolitical events
-- Major science, technology, health or environmental developments
-- Major disasters, conflicts or events affecting many people
-- Important decisions, policies, appointments or announcements
-- Significant public-interest developments
-- Death of famous personalities.
-
-Be SELECTIVE. 
-
-Do NOT select:
-- Routine news
-- Minor local events
-- Celebrity or entertainment news
-- Ordinary crime reports
-- Routine political statements
-- Minor administrative activities
-- Routine sports news
-- Repetitive coverage of the same event
-
-If multiple articles cover the same important event, select only the best/most informative one.
-
-Judge all articles relative to each other and return only the important stories.
-
-Return ONLY JSON:
+STRICT RULES:
+- Select a MAXIMUM of 15 stories total and a few stories minimum. Choose the 10 most significant and interesting items from the list.
+- Do NOT restrict selections only to policy or government news. Cultural shifts, major tragedies.
+- Return ONLY valid JSON matching the exact format below, with no extra text or markdown formatting.
 
 {
-  "importantIds": ["id1", "id2"]
+  "importantIds": ["id1", "id2", "id3"]
 }
 
 Only use IDs provided in the input.
@@ -50,7 +32,3 @@ TODAY'S NEWS:
 ${JSON.stringify(news)}
 `;
 }
-
-export {
-  buildPrompt
-};
